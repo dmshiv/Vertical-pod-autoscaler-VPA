@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: load-generator
+spec:
+  containers:
+  - name: load-generator
+    image: busybox:1.28
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 128Mi
+    command: ["/bin/sh", "-c"]
+    args: ["while true; do wget -q -O- http://nginx-vpa-demo & done"]
+  restartPolicy: Never
+

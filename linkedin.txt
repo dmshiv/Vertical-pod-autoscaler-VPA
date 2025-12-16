@@ -1,0 +1,26 @@
+Here’s a LinkedIn post you can use for your VPA demo:
+
+🚀 Exploring Kubernetes Vertical Pod Autoscaler (VPA)!
+
+After working with HPA, I wanted to see how VPA can optimize resource usage for my workloads. Here’s what I learned:
+
+🔹 What is VPA?
+VPA automatically adjusts CPU and memory requests for your containers based on real usage. Instead of adding more pods (like HPA), it makes each pod “bigger or smaller” as needed.
+
+🔹 How does it work?
+
+Recommender: Watches your pods and suggests the best CPU/memory.
+Admission Controller: Injects those recommendations into new pods.
+Updater: Evicts pods if their resources are way off, so they restart with better values.
+🔹 Key Takeaways:
+
+VPA ignores resource limits in your deployment YAML! If you want to set boundaries, use maxAllowed and minAllowed in your VPA YAML.
+Great for stable workloads where right-sizing is more important than scaling out.
+🔹 When to use VPA vs HPA?
+
+Use VPA for optimizing pod resources.
+Use HPA for scaling the number of pods.
+Combine both for the best of both worlds!
+Check out my repo for a hands-on demo, troubleshooting tips, and diagrams that make VPA super easy to understand.
+
+#Kubernetes #VPA #DevOps #CloudNative #SRE #Autoscaling #K8s
